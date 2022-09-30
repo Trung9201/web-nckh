@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dịch vụ PG</title>
+        <link rel="stylesheet" href="/public/css/home.css" />
+    </head>
+    <body>
+        <nav class="navbar" id="navbar">
+            <div class="navbar_container">
+                <div class="navbar_logo">
+                    <h1>PG</h1>
+                </div>
+                <ul class="navbar_menu">
+                    <li class="menu-item">
+                        <a href="#">Dịch vụ +</a>
+                        <ul>
+                            <li>
+                                <a href="">PG +</a>
+                                <ul>
+                                    <li><a href="">Tiệc cưới</a></li>
+                                    <li><a href="">Sự kiện</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Dẫn lễ</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="#">Giới thiệu</a></li>
+                    <li class="menu-item"><a href="#">Nhân sự</a></li>
+                    <li class="menu-item"><a href="#">Feedback</a></li>
+                    <li class="menu-item"><a href="#">Liên hệ</a></li>
+                    <li>
+                        <a
+                            href="{{ route('login') }}"
+                            class="text-sm text-gray-700 dark:text-gray-500 underline"
+                            >Log in</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="banner">
+            <div class="banner_container">
+                <div class="banner-title">Dịch vụ số 1 Thái Bình</div>
+                <div class="banner-content">
+                    Chúng tôi luôn cố gắng và nỗ lực đem lại cho khách hàng
+                    những trải nghiệm tốt nhất khi đến với chúng tôi.
+                </div>
+            </div>
+        </div>
+        <div class="x"></div>
+    </body>
+
+    <script>
+        window.onscroll = function () {
+            scrollFunction();
+        };
+        function scrollFunction() {
+            if (
+                document.body.scrollTop > 30 ||
+                document.documentElement.scrollTop > 30
+            ) {
+                document.getElementById("navbar").style.background = "#ff8080";
+                document.getElementById("navbar").style.transition =
+                    "all .3s ease-in";
+            } else {
+                document.getElementById("navbar").style.background = "none";
+            }
+        }
+    </script>
+</html>
