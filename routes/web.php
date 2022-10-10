@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ManagerUser;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Manager;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +29,15 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+Route::group(['middleware' => 'role:developer'], function() {
+
+    Route::get('/admin', function() {
+ 
+       return 'Welcome Admin';
+       
+    });
+ 
+ });
+Route::resource('user',ManagerUser::class);
+
+

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Permission;
+use App\Models\Role;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -12,7 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
-{
+{ 
     /**
      * Display the registration view.
      *
@@ -32,7 +34,15 @@ class RegisteredUserController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
-    {
+    { $user_permission = Permission::where('slug','view')->first();
+        $user_role = new Role();
+		$user_role->slug = 'user';
+		$user_role->name = 'User';
+		$user_role->save();
+		$user_role->permissions()->attach($user_permission);
+        $us_role = Role::where('slug', 'user')->first();
+        $manager_role = Role::where('slug', 'user')->first();
+        $manager_perm = Permission::where('slug','view')->first();
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -43,7 +53,12 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-        ]);
+           
+
+        ])
+		;
+$user->roles()->attach($manager_role );
+	
 
         event(new Registered($user));
 

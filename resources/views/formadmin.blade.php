@@ -1,13 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" href="{{asset('css/admin.css'); }}">
+    <script src="https://code.jquery.com/jquery-3.1.1.js">
+ 
+   
+</script>
+
+    @vite(['resources/js/admin.js','resources/css/admin.css'])
 </head>
 <body>
+    
 <div class="sidebar_menu">
             <div class="sidebar-title">
                 <h1>PG</h1>
@@ -24,27 +32,27 @@
 
         <div class="sidebar_content">
             <!-- form quản lý tài khoản -->
-            <form action="" class="content active management-user">
+            
                 <div class="managament-title">
                     Danh sách tài khoản người dùng
                 </div>
-                <div class="list-info">
-                    Số lượng tài khoản:
-                    <span id="count-user"></span>
-                </div>
+             
                 <div class="list-user">
-                    <table>
+                    <table id="manager">
+                        <thead>
                         <tr>
                             <th>STT</th>
                             <th>Tên người dùng</th>
                             <th>Gmail</th>
-                            <th>Số điện thoại</th>
-                            <th></th>
-                        </tr>
-                        <tbody id="users"></tbody>
+                            <th>Action</th>
+                            
+                            </tr>
+
+                        </thead>
                     </table>
-                </div>
-            </form>
+                </div>     
+                
+                               
 
             <!-- form quản lý đơn  -->
             <form action="" class="content management-user">
@@ -63,8 +71,10 @@
                         <span id="count-user"></span>
                     </div>
                 </div>
-                <div class="list-user">
+               
                     <table>
+                    @csrf-token
+                        <thead>
                         <tr>
                             <th>STT</th>
                             <th>Tên người đặt</th>
@@ -75,13 +85,17 @@
                             <th>Thành tiền</th>
                             <th></th>
                         </tr>
-                        <tbody id="users"></tbody>
+
+
+                        </thead>
                     </table>
-                </div>
+                   
             </form>
+           
 
             <!-- form quản lý trang phục -->
             <form action="" class="content management-shirt">
+            @
                 <div class="managament-title">Quản lý nội dung</div>
                 <div class="managament-container">
                     <div class="managament-feedback"></div>
@@ -167,6 +181,7 @@
 
             <!-- form quản lý nhân sự -->
             <form action="" class="content management-staff">
+            @csrf-token
                 <div class="managament-title">Quản lý nhân sự</div>
                 <div>
                     <form action="">
@@ -198,6 +213,7 @@
 
             <!-- form quản lý feedback -->
             <form action="" class="content management-feedback">
+            @csrf-token
                 <div class="managament-title">Quản Feedback</div>
                 <div>
                     <form action="">
@@ -224,6 +240,10 @@
                 </div>
             </form>
         </div>
-    <script src="{{asset('js/admin.js');}}"></script>
+
+        
 </body>
 </html>
+<link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
+            <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+          
