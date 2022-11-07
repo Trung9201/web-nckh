@@ -52,7 +52,14 @@ class RoleSeeder extends Seeder
 		$manager_role = Role::where('slug', 'user')->first();
 		$dev_perm = Permission::where('slug','create')->first();
 		$manager_perm = Permission::where('slug','view')->first();
-
+		$admin = new User();
+		$admin->name = 'Tran Vu Long';
+		$admin->email = 'longtranvu@gmail.com';
+		$admin->password = bcrypt('123456789');
+		$admin->addresss=' TP.Thai Binh';
+		$admin->save();
+		$admin->roles()->attach($dev_role);
+		$admin->permissions()->attach($dev_perm);
 	
 
 		$manager = new User();
