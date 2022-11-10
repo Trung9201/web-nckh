@@ -192,7 +192,7 @@
                     </button>
                 </div>
 
-                <form action="{{route('product.update',1)}}"  id="editFormID" method="POST"enctype="multipart/form-data">
+                <form action="{{route('product.update',2)}}"  id="editFormID" method="POST"enctype="multipart/form-data">
                     <div class="modal-body">
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
@@ -232,11 +232,6 @@
 
     <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-
-</body>
-
-</html>
-
 <script>
     jQuery(document).ready(function() {
     jQuery('.btn-edit').on('click', function(e) {
@@ -247,13 +242,6 @@
        
     })
 });
-    </script>
-    
-             
-       <script>
-       
-//table skins
- 
 var table= jQuery("#manager-skin").DataTable({
     ajax: "/product",
     serverSide: true,
@@ -285,6 +273,13 @@ var table= jQuery("#manager-skin").DataTable({
         { data: "action", name: "action" },
     ]
 });
-</script>
+    </script>
+</body>
 
+</html>
+
+
+    
+             
+     
       

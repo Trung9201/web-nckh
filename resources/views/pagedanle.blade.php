@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
     <!-- start navbar -->
     <nav class="navbar" id="navbar">
         <div class="navbar_container">
@@ -142,60 +143,15 @@
     <!-- end automatic slide -->
 
     <!-- start product -->
-    <div class="products">
-        <div class="product-card">
-            <img src="{{URL::asset('/images/danle/1.jpg')}}" alt="" />
-            <div class="product-name">Áo dài trắng nam nữ thêu hoa trẻ trung, lịch sự</div>
 
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-        <div class="product-card">
-            <img src="{{URL::asset('/images/danle/2.jpg')}}" alt="" />
-            <div class="product-name">Áo dài nam nữ đỏ họa tiết bắt mắt, sang trọng </div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-        <div class="product-card">
-            <img src="{{URL::asset('/images/danle/3.jpg')}}" alt="" />
-            <div class="product-name">Áo dài trơn hồng nhẹ nhàng lịch sự</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-        <div class="product-card">
-            <img src="{{URL::asset('/images/danle/4.jpg')}}" alt="" />
-            <div class="product-name">Áo dài nam nữ gấm vàng </div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-        <div class="product-card">
-            <img src="{{URL::asset('/images/danle/5.jpg')}}" alt="" />
-            <div class="product-name">Áo dài trơn đỏ sang trọng lịch sự</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-        <div class="product-card">
-            <img src="{{URL::asset('/images/danle/6.jpg')}}" alt="" />
-            <div class="product-name">Áo dài nam nữ hồng phối họa tiết </div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-        <div class="product-card">
-            <img src="{{URL::asset('/images/danle/7.jpg')}}" alt="" />
-            <div class="product-name">Áo dài nam nữ vàng chanh tay bồng</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-        <div class="product-card">
-            <img src="{{URL::asset('/images/danle/8.jpg')}}" alt="" />
-            <div class="product-name">Áo dài nam nữ xanh phối họa tiết thêu</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-        <div class="product-card">
-            <img src="{{URL::asset('/images/danle/9.jpg')}}" alt="" />
-            <div class="product-name">Áo dài hồng nam nữ phối họa tiết</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-        <div class="product-card">
-            <img src="{{URL::asset('/images/danle/10.jpg')}}" alt="" />
-            <div class="product-name">Áo dài trắng trơn </div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
+ @foreach($products as $product)
 
-    </div>
+        <div class="product-card">
+        <img src="{{URL::asset('public/image/'.$product->photo)}}"/>
+            <div class="product-name">{{$product->name}} </div>
+            <button class="btn" id="btn-order">Đặt lịch</button>
+        </div>
+    @endforeach
     <!-- end product -->
 
     <!-- start cart -->

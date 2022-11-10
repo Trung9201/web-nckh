@@ -18,7 +18,7 @@ class Productt extends Controller
         return datatables()->of($product)
       
         ->addColumn('action',function($row){
-            $html='<a href="#" class="btn btn-xs btn-secondary btn-edit">Edit</a> ';
+            $html='<button  class="btn btn-xs btn-secondary btn-edit">Edit ';
             $html.='<button data-rowid="' . $row->id . '" class="btn btn-xs btn-danger btn-deletepr">Del</button>';
             return $html;
         })->toJson();

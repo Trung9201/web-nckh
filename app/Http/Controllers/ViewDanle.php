@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class ViewDanle extends Controller
 { 
-    public function view()
+    public function index()
     {
-        $product = new Product();
         
+        return view('hi',['linh'=>'1']);
     }
   
 }

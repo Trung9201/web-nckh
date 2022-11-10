@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Detail;
 use App\Http\Controllers\ManagerUser;
 use App\Http\Controllers\MathPay;
+use App\Http\Controllers\ViewDanle;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Manager;
@@ -64,3 +66,8 @@ Route::get('/thu',function(){
 });
 Route::resource('product',Productt::class);
 Route::post('/detail',[MathPay::class,'payment']);
+Route::get('danlev',[ViewDanle::class,'index']);
+Route::get('/long',function(){
+    return view('hi');
+});
+Route::resource('detaill',Detail::class);
