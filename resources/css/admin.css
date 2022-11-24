@@ -10,7 +10,7 @@ body {
 }
 
 .sidebar_menu {
-    background-color: #f17272;
+    background-color: #b57f8f;
     height: 100vh;
 }
 
@@ -34,11 +34,11 @@ body {
 }
 
 .sidebar-item:hover {
-    background-color: #db3131;
+    background-color: #b5637c;
 }
 
 .sidebar-item.active {
-    background-color: #db3131;
+    background-color: #b5637c;
 
 }
 
@@ -49,7 +49,7 @@ body {
 
 .managament-title {
     font-size: 36px;
-    color: #db3131;
+    color: #b5637c;
     font-weight: 700;
     text-align: center;
     margin: 20px;
@@ -132,4 +132,8 @@ td, th {
 
 .form-group .btn {
     width: 200px;
+}
+
+img {
+    width: 150px;
 }

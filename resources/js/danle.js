@@ -24,20 +24,20 @@ closeCart.addEventListener("click", () => {
 });
 
 // show hoa don
-const btnOrders = document.querySelectorAll("#btn-order");
+// const btnOrders = document.querySelectorAll("#btn-order");
 
-btnOrders.forEach((btn, index) => {
-    btn.onclick = (e) => {
-        e.preventDefault();
-        cart.style.display = "block";
-        const card = e.target.closest(".product-card");
-        const srcImg = card.querySelector("img").src;
-        const cartImg = document.querySelector(".cart-img");
-        const nameProduct = card.querySelector(".product-name").innerHTML;
-        cart.querySelector(".skin-name").innerHTML = nameProduct;
-        cartImg.src = srcImg;
-    };
-});
+// btnOrders.forEach((btn, index) => {
+//     btn.onclick = (e) => {
+//         e.preventDefault();
+//         cart.style.display = "block";
+//         const card = e.target.closest(".product-card");
+//         const srcImg = card.querySelector("img").src;
+//         const cartImg = document.querySelector(".cart-img");
+//         const nameProduct = card.querySelector(".product-name").innerHTML;
+//         cart.querySelector(".skin-name").innerHTML = nameProduct;
+//         cartImg.src = srcImg;
+//     };
+// });
 
 // thay đổi giá trị hóa đơn khi thay đổi giá trị các thẻ input
 
@@ -45,7 +45,7 @@ btnOrders.forEach((btn, index) => {
 const skinSL = document.querySelector("#skin-sl");
 
 skinSL.addEventListener("change", () => {
-    document.querySelector(".skin-amount").innerHTML = skinSL.value;
+    document.querySelector(".skin-amount").value = skinSL.value;
     Sum();
 });
 
@@ -55,14 +55,16 @@ const personnelMale = document.querySelector("#personnel-sl-male");
 const personnelFemale = document.querySelector("#personnel-sl-female");
 
 personnelMale.addEventListener("change", () => {
-    document.querySelector(".personnel-amount-male").innerHTML =
+    document.querySelector(".personnel-amount-male").value =
         personnelMale.value;
+
     Sum();
 });
 
 personnelFemale.addEventListener("change", () => {
-    document.querySelector(".personnel-amount-female").innerHTML =
+    document.querySelector(".personnel-amount-female").value =
         personnelFemale.value;
+
     Sum();
 });
 
@@ -90,7 +92,6 @@ noteInput.addEventListener("change", () => {
 // Tính tổng hóa đơn
 const total = document.querySelector("#total");
 const selectAddress = document.querySelector("#select-dddress");
-console.log(selectAddress);
 
 function Sum() {
     const personnelMaleValue = personnelMale.value;
@@ -113,11 +114,16 @@ const btnOrderReceipt = document.querySelector(".btn-order-receipt");
 const formSuccess = document.querySelector(".form_success");
 const btnCloseSuccess = document.querySelector(".fa-times");
 btnOrderReceipt.onclick = (e) => {
-    e.preventDefault();
     formSuccess.classList.add("active");
 };
 
 btnCloseSuccess.onclick = () => {
     formSuccess.classList.remove("active");
     cart.style.display = "none";
+    document.querySelector(".personnel-amount-female").value = 0;
+    document.querySelector(".personnel-amount-male").value = 0;
+    document.querySelector(".skin-amount").value = 0;
+    skinSL.value = 0;
+    personnelMale.value = 0;
+    personnelFemale.value = 0;
 };

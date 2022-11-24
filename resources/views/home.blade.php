@@ -31,26 +31,26 @@
                         <li>
                             <a>PG +</a>
                             <ul class="menu-child-2">
-                                <li><a href="{{ route('pg') }}">Tiệc cưới</a></li>
-                                <li><a href="{{ route('pg') }}">Sự kiện</a></li>
+                                <li><a href="{{ route('pg.index') }}">Tiệc cưới</a></li>
+                                <li><a href="{{ route('pg.index') }}">Sự kiện</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ route('danle') }}">Dẫn lễ</a></li>
+                        <li><a href="{{ route('pagedanle.index') }}">Dẫn lễ</a></li>
                     </ul>
                 </li>
-                <li class="menu-item"><a href="#service">Giới thiệu</a></li>
+                <li class="menu-item"><a href="{{ route('home') }}">Giới thiệu</a></li>
                 <li class="menu-item"><a href="{{ route('personnel') }}">Nhân sự</a></li>
                 <li class="menu-item"><a href="{{ route('feedback') }}">Feedback</a></li>
-                <li class="menu-item"><a href="#contact">Liên hệ</a></li>
+                <li class="menu-item"><a href="{{ route('home') }}">Liên hệ</a></li>
                 <li>
-                    <!-- <a href="{{ route('login') }}" class="btn btn-login">Log in</a>
-                    <a href="{{ route('register') }}" class="btn btn-logout">Register</a> -->
-                    <div class="menu-avatar">
+                    <a href="{{ route('login') }}" class="btn btn-login">Log in</a>
+                    <a href="{{ route('register') }}" class="btn btn-logout">Register</a>
+                    <!-- <div class="menu-avatar">
                         <div class="avatar"><img src="{{URL::asset('/images/avatar-login.png')}}" alt=""></div>
                         <a href="{{ route('login') }}" class="menu-logout">
                             Log out
                         </a>
-                    </div>
+                    </div> -->
                 </li>
             </ul>
             <div class="navbar-toggle">
@@ -80,17 +80,17 @@
             <div class="service-item">
                 <img src="{{URL::asset('/images/home-danle.jpg')}}" alt="" />
                 <h1>DẪN LỄ</h1>
-                <a class="btn" href="{{ route('danle') }}">XEM THÊM</a>
+                <a class="btn" href="{{ route('pagedanle.index') }}">XEM THÊM</a>
             </div>
             <div class="service-item">
                 <img src="{{URL::asset('/images/home-tieccuoi.jpg')}}" alt="" />
                 <h1>TIỆC CƯỚI</h1>
-                <a class="btn" href="{{ route('pg') }}">XEM THÊM</a>
+                <a class="btn" href="{{ route('pg.index') }}">XEM THÊM</a>
             </div>
             <div class="service-item">
                 <img src="{{URL::asset('/images/home-sukien.jpg')}}" alt="" />
                 <h1>SỰ KIỆN</h1>
-                <a class="btn" href="{{ route('pg') }}">XEM THÊM</a>
+                <a class="btn" href="{{ route('pg.index') }}">XEM THÊM</a>
             </div>
         </div>
 
@@ -140,7 +140,7 @@
                     Trang phục chúng tôi với nhiều mẫu mã, kiểu dáng màu sắc
                     đa dạng cho phù hợp với sự kiện của khách hàng.
                 </div>
-                <a href="{{ route('pg') }}" class="btn2">XEM THÊM</a>
+                <a href="{{ route('pg.index') }}" class="btn2">XEM THÊM</a>
             </div>
             <img src="{{URL::asset('/images/sukien.jpg')}}" alt="" />
         </div>
@@ -155,7 +155,6 @@
             <h2>--- Bạch Dương ---</h2>
         </div>
     </div>
-
     <!-- end service -->
 
     <div class="follow_us">

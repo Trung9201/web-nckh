@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Detail extends Controller
@@ -11,11 +12,13 @@ class Detail extends Controller
     /**
      * Display a listing of the resource.
      *
-
      */
     public function index()
-    { $products=Product::all();
-      return   view('pagedanle')->with('products',$products);
+    {
+        $products = Product::all();
+        $name = Auth::user()->name;
+
+        return view('pagedanle')->with(['products' => $products, 'name' => $name]);
         //return view('pagedanle')->with('products','1');
     }
 
@@ -26,7 +29,7 @@ class Detail extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -35,10 +38,10 @@ class Detail extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$id)
+    public function store(Request $request, $id)
     {
 
-       
+
 
     }
 
@@ -59,12 +62,12 @@ class Detail extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id,Request $request)
+    public function edit($id, Request $request)
     {
-        $price=DB::table('product')->select('price')->where('id','=',$id);
-        $amount=$request->amount;
-        $total=$price * $amount;
-        
+        $price = DB::table('product')->select('price')->where('id', '=', $id);
+        $amount = $request->amount;
+        $total = $price * $amount;
+
     }
 
     /**

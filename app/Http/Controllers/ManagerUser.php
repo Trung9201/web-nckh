@@ -16,18 +16,18 @@ class ManagerUser extends Controller
 
      */
     public function index(Request $request)
-{
+    {
 
-        if($request->ajax()){
-           
-            $user=User::all()->where('id','!=',1);
-            return datatables()->of($user)->addColumn('action',function($row){
-                $html='<a href=# class="btn btn-xs btn-secondary btn-edit">Edit</a> ';
-               
-                $html .='<button data-rowid="' . $row->id . '" class="btn btn-xs btn-danger btn-delete">Del</button>';
+        if ($request->ajax()) {
+
+            $user = User::all()->where('id', '!=', 1);
+            return datatables()->of($user)->addColumn('action', function ($row) {
+                $html = '<a href=# class="btn btn-xs btn-secondary btn-edit" style="margin-bottom: 10px;">Edit</a> ';
+
+                $html .= '<button data-rowid="' . $row->id . '" class="btn btn-xs btn-danger btn-delete">Del</button>';
 
 
-                    return $html;
+                return $html;
             })->toJson();
         }
         return view('formadmin');
@@ -51,7 +51,6 @@ class ManagerUser extends Controller
      */
     public function store(Request $request)
     {
-        
     }
 
     /**
@@ -96,7 +95,7 @@ class ManagerUser extends Controller
      */
     public function destroy($id)
     {
-       User::find($id)->delete();
+        User::find($id)->delete();
         return ['success' => true, 'message' => 'Deleted Successfully'];
     }
 }

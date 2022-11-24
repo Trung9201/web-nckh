@@ -1,4 +1,1 @@
-<div>
-   <!-- <img src="{{URL::asset('/images/lon.JPG')}}" alt=""> -->
-   
-</div>
+<img src="{{URL::asset('/images/logo-bd.png')}}" style="width: 200px;" alt="">

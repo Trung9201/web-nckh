@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dịch vụ Bạch Dương</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     @vite(['resources/js/home.js','resources/css/home.css'])
     @vite(['resources/js/pg.js','resources/css/pg.css'])
@@ -28,11 +30,11 @@
                         <li>
                             <a>PG +</a>
                             <ul class="menu-child-2">
-                                <li><a href="{{ route('pg') }}">Tiệc cưới</a></li>
-                                <li><a href="{{ route('pg') }}">Sự kiện</a></li>
+                                <li><a href="{{ route('pg.index') }}">Tiệc cưới</a></li>
+                                <li><a href="{{ route('pg.index') }}">Sự kiện</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ route('danle') }}">Dẫn lễ</a></li>
+                        <li><a href="{{ route('pagedanle.index') }}">Dẫn lễ</a></li>
                     </ul>
                 </li>
                 <li class="menu-item"><a href="{{ route('home') }}">Giới thiệu</a></li>
@@ -108,68 +110,18 @@
     <!-- start product -->
     <!-- start product -->
     <div class="products">
+        @foreach($products as $product)
         <div class="product-card">
-            <img src="{{URL::asset('/images/pg/1.jpg')}}" alt="" />
-            <div class="product-name">Váy cúp đỏ dạ hội </div>
+            <img src="{{URL::asset('public/image/'.$product->photo)}}" />
+            <!-- <div class="product-name">{{$product->name}} </div> -->
             <button class="btn" id="btn-order">Đặt lịch</button>
         </div>
-
-        <div class="product-card">
-            <img src="{{URL::asset('/images/pg/2.jpg')}}" alt="" />
-            <div class="product-name">Áo dài đỏ họa tiết</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-
-        <div class="product-card">
-            <img src="{{URL::asset('/images/pg/5.jpg')}}" alt="" />
-            <div class="product-name">Áo dài trắng họa tiết hoa xanh</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-
-        <div class="product-card">
-            <img src="{{URL::asset('/images/pg/3.jpg')}}" alt="" />
-            <div class="product-name">váy cup tắng dạ hội</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-        <div class="product-card">
-            <img src="{{URL::asset('/images/pg/4.jpg')}}" alt="" />
-            <div class="product-name">Váy cup vàng dạ hội</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-
-        <div class="product-card">
-            <img src="{{URL::asset('/images/pg/7.jpg')}}" alt="" />
-            <div class="product-name">Áo dài đỏ họa tiết uyên ương</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-        <div class="product-card">
-            <img src="{{URL::asset('/images/pg/8.jpg')}}" alt="" />
-            <div class="product-name">Váy trắng dạ hội</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-
-        <div class="product-card">
-            <img src="{{URL::asset('/images/pg/9.jpg')}}" alt="" />
-            <div class="product-name">Áo dài xanh dương trơn</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-
-        <div class="product-card">
-            <img src="{{URL::asset('/images/pg/13.jpg')}}" alt="" />
-            <div class="product-name">áo dài đỏ trơn tiệc cưới</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-        <div class="product-card">
-            <img src="{{URL::asset('/images/pg/14.jpg')}}" alt="" />
-            <div class="product-name">Áo dài xanh trơn</div>
-            <button class="btn" id="btn-order">Đặt lịch</button>
-        </div>
-
+        @endforeach
     </div>
     <!-- end product -->
 
     <!-- start cart -->
-    <form action="" id="cart" class="cart">
+    <div id="cart" class="cart">
         <div class="close">&#x2715</div>
         <div class="cart_container">
             <div class="cart-left">
@@ -177,22 +129,23 @@
                     <div class="cart-title">Trang phục</div>
                     <div class="cart-skin-info">
                         <img class="cart-img" src="" alt="">
-                        <div>Nhập số lượng: <input id="skin-sl" type="text" value="0"></div>
+                        <div>Nhập số lượng: <input id="skin-sl" type="text" value="0" required></div>
                     </div>
                 </div>
                 <div class="line"></div>
                 <div class="cart-personnel ">
                     <div class="cart-title">Số lượng nhân sự</div>
                     <div class="cart-personnel-info">
-                        <span>Nam: <input id="personnel-sl-male" type="text" value="0"></span>
-                        <span>Nữ: <input id="personnel-sl-female" type="text" value="0"></span>
+                        <span>Nam: <input id="personnel-sl-male" type="text" value="0" required></span>
+                        <span>Nữ: <input id="personnel-sl-female" type="text" value="0" required></span>
                     </div>
                 </div>
                 <div class="line"></div>
                 <div class="cart-time ">
                     <div class="cart-title">Thời gian</div>
                     <div class="cart-time-info">
-                        <textarea id="time-input" name="" cols="30" rows="5" placeholder="ví dụ: 9h30 ngày 10/10/2022"></textarea>
+                        <textarea id="time-input" name="" cols="30" rows="5" placeholder="ví dụ: 9h30 ngày 10/10/2022"
+                            required></textarea>
                     </div>
                 </div>
                 <div class="line"></div>
@@ -203,65 +156,78 @@
                             <option value="ttp">Trong Thành Phố</option>
                             <option value="ntp">Ngoài Thành Phố</option>
                         </select>
-                        <textarea name="" id="address-input" cols="30" rows="5" placeholder=" Hãy nhập địa chỉ cụ thể"></textarea>
+                        <textarea name="" id="address-input" cols="30" rows="5" placeholder=" Hãy nhập địa chỉ cụ thể"
+                            required></textarea>
                     </div>
                 </div>
                 <div class="line"></div>
                 <div class="cart-note ">
                     <div class="cart-title">Ghi chú</div>
                     <div class="cart-note-info">
-                        <textarea name="" id="note-input" cols="30" rows="5" placeholder="Hãy ghi ra những yêu cần bạn cần lưu ý chúng tôi!"></textarea>
+                        <textarea name="" id="note-input" cols="30" rows="5"
+                            placeholder="Hãy ghi ra những yêu cần bạn cần lưu ý chúng tôi!"></textarea>
                     </div>
                 </div>
                 <div class="line"></div>
-
             </div>
 
             <div class="cart-right">
-                <div class="cart-right-title">HÓA ĐƠN</div>
-                <div class="cart-information">
-                    <div class="cart-information-skin">
-                        <div class="skin-name">Tên trang phục</div>
-                        <div>x <span class="skin-amount"></span></div>
-                    </div>
-                    <div class="cart-information-personnel">
-                        <div class="personnel-male">
-                            <p>Số nhân sự nam</p>
-                            <div>x <span class="personnel-amount-male"></span></div>
+                <form method="POST" id="order-receipt" action="{{url('/mathpg/2')}}">
+                    {{ csrf_field() }}
+                    <div class="cart-right-title">HÓA ĐƠN</div>
+                    <div class="cart-information">
+                        <div class="cart-information-skin">
+                            <div class="skin-name">Tên trang phục</div>
+                            <div>x <input name="amountskinpg" type="text" class="skin-amount" value="0" required></div>
+
+                            @foreach ($errors->all() as $error)
+                            <div>{{ $error }}</div>
+                            @endforeach
+
                         </div>
-                        <div class="personnel-female">
-                            <p>Số nhân sự nữ</p>
-                            <div>x <span class="personnel-amount-female"></span></div>
+                        <div class="cart-information-personnel">
+                            <div class="personnel-male">
+                                <p>Số nhân sự nam</p>
+                                <div>x <input name="amountmalepg" type="text" class="personnel-amount-male" value="0"
+                                        required></div>
+                            </div>
+
+
+                            <div class="personnel-female">
+                                <p>Số nhân sự nữ</p>
+                                <div>x <input name="amountfemalepg" type="text" class="personnel-amount-female" value="0"
+                                        required></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="cart-information-time">
-                        Thời gian:
-                        <div class="time-detail"></div>
-                    </div>
-                    <div class="cart-information-address">
-                        Địa chỉ:
-                        <div class="address-detail"></div>
-                    </div>
-                    <div class="cart-information-note">
-                        Ghi chú:
-                        <div class="note-detail">
-                            Không có ghi chú
+                        <div class="cart-information-time">
+                            Thời gian:
+                            <div class="time-detail"></div>
                         </div>
+                        <div class="cart-information-address">
+                            Địa chỉ:
+                            <div class="address-detail"></div>
+                        </div>
+                        <div class="cart-information-note">
+                            Ghi chú:
+                            <div class="note-detail">
+                                Không có ghi chú
+                            </div>
+                        </div>
+                        <div class="cart-information-fee">
+                            <p>Phí dịch vụ:</p>
+                            <div class="fee">20%</div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="cart-total">
+                            <p>Tổng thanh toán</p>
+                            <div><span id="total"></span> vnđ</div>
+                        </div>
+                        <button class="btn btn-order-receipt">Đặt dịch vụ</button>
                     </div>
-                    <div class="cart-information-fee">
-                        <p>Phí dịch vụ:</p>
-                        <div class="fee">20%</div>
-                    </div>
-                    <div class="line"></div>
-                    <div class="cart-total">
-                        <p>Tổng thanh toán</p>
-                        <div><span id="total"></span> vnđ</div>
-                    </div>
-                    <button class="btn btn-order-receipt">Đặt dịch vụ</button>
-                </div>
+                </form>
             </div>
         </div>
-    </form>
+    </div>
     <!-- start cart -->
 
 
@@ -275,9 +241,8 @@
         </div>
     </div>
 
-
     <!-- start footer -->
-    <div id="footer" class="footer">
+    <div id="footer" class="footer" style="margin-top: -90px;">
         <div class="footer-item">
             <img src="{{URL::asset('/images/logo-bd.png')}}" alt="">
         </div>
@@ -300,9 +265,36 @@
     </div>
     <!-- enđ footer -->
 
+
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        const btnOrders = document.querySelectorAll("#btn-order");
+        btnOrders.forEach((btn, index) => {
+            btn.onclick = (e) => {
+                e.preventDefault();
+                cart.style.display = "block";
+                const card = e.target.closest(".product-card");
+                const srcImg = card.querySelector("img").src;
+                const cartImg = document.querySelector(".cart-img");
+                const nameProduct = card.querySelector(".product-name").innerHTML;
+                cart.querySelector(".skin-name").innerHTML = nameProduct;
+                cartImg.src = srcImg;
+
+                const idProduct = index + 1;
+                document.querySelector(
+                    "#order-receipt"
+                ).action = `http://127.0.0.1:8000/mathpay/${idProduct}`;
+            };
+        });
+
+        jQuery(document).ready(function () {
+            jQuery('.btn-order-receipt').on('submit', function (e) { })
+        })
+    </script>
 
 </body>
 

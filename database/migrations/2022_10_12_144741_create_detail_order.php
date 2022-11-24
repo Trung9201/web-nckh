@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('detail_order', function (Blueprint $table) {
             $table->bigIncrements('id');
             
-            $table->unsignedBigInteger('qty');
-            $table->unsignedBigInteger('price');
+            $table->unsignedBigInteger('qtyskin');
+            $table->unsignedBigInteger('amountmale');
+            $table->unsignedBigInteger('amountfemale');
+            $table->unsignedBigInteger('priceskin');
             $table->unsignedBigInteger('total');
              $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');

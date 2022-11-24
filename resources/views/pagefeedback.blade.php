@@ -30,7 +30,7 @@
                                 <li><a href="{{ route('pg') }}">Sự kiện</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ route('danle') }}">Dẫn lễ</a></li>
+                        <li><a href="{{ route('pagedanle.index') }}">Dẫn lễ</a></li>
                     </ul>
                 </li>
                 <li class="menu-item"><a href="{{ route('home') }}">Giới thiệu</a></li>
