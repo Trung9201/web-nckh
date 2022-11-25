@@ -1,5 +1,3 @@
-
-
 //select menu
 const sidebarItems = document.querySelectorAll(".sidebar-item");
 const contents = document.querySelectorAll(".content");
@@ -46,14 +44,14 @@ var tableReceipt = jQuery("#manager-receipt").DataTable({
     aaSorting: [[0, "asc"]],
     columns: [
         { data: "id", name: "id" },
-        {data:'name',name:'Tên sản phẩm'},
-        {data:"names",name:"Tên khách hàng"},
+        { data: "name", name: "Tên sản phẩm" },
+        { data: "names", name: "Tên khách hàng" },
         { data: "qtyskin", name: "Số lượng" },
         { data: "amountmale", name: "Số lượng nam" },
         { data: "amountfemale", name: "Số lượng nữ" },
         { data: "priceskin", name: "Đơn giá" },
-        {data:'total',name:"Tổng tiền"},
-        
+        { data: "total", name: "Tổng tiền" },
+
         { data: "action", name: "action" },
     ],
 });
@@ -83,30 +81,30 @@ var table = jQuery("#manager-skin").DataTable({
 });
 
 //table personnel
-var tablePersonnel = jQuery("#manager-personnel").DataTable({
-    ajax: "",
-    serverSide: true,
-    processing: true,
-    aaSorting: [[0, "asc"]],
-    columns: [
-        { data: "id", name: "id" },
-        { data: "image", name: "image" },
-        { data: "action", name: "action" },
-    ],
-});
+// var tablePersonnel = jQuery("#manager-personnel").DataTable({
+//     ajax: "",
+//     serverSide: true,
+//     processing: true,
+//     aaSorting: [[0, "asc"]],
+//     columns: [
+//         { data: "id", name: "id" },
+//         { data: "image", name: "image" },
+//         { data: "action", name: "action" },
+//     ],
+// });
 
 //table feedback
-var tableFeedback = jQuery("#manager-feedback").DataTable({
-    ajax: "/user",
-    serverSide: true,
-    processing: true,
-    aaSorting: [[0, "asc"]],
-    columns: [
-        { data: "id", name: "id" },
-        { data: "image", name: "image" },
-        { data: "action", name: "action" },
-    ],
-});
+// var tableFeedback = jQuery("#manager-feedback").DataTable({
+//     ajax: "/user",
+//     serverSide: true,
+//     processing: true,
+//     aaSorting: [[0, "asc"]],
+//     columns: [
+//         { data: "id", name: "id" },
+//         { data: "image", name: "image" },
+//         { data: "action", name: "action" },
+//     ],
+// });
 
 jQuery(document).on("click", ".btn-delete", function () {
     if (!confirm("Are you sure?")) return;
@@ -262,14 +260,14 @@ var tableReceipt = jQuery("#manager-receipt-pg").DataTable({
     aaSorting: [[0, "asc"]],
     columns: [
         { data: "id", name: "id" },
-        {data:'name',name:'Tên sản phẩm'},
-        {data:"names",name:"Tên khách hàng"},
+        { data: "name", name: "Tên sản phẩm" },
+        { data: "names", name: "Tên khách hàng" },
         { data: "qtyskin", name: "Số lượng" },
         { data: "amountmale", name: "Số lượng nam" },
         { data: "amountfemale", name: "Số lượng nữ" },
         { data: "priceskin", name: "Đơn giá" },
-        {data:'total',name:"Tổng tiền"},
-        
+        { data: "total", name: "Tổng tiền" },
+
         { data: "action", name: "action" },
     ],
 });

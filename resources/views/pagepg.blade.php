@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dịch vụ Bạch Dương</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     @vite(['resources/js/home.js','resources/css/home.css'])
     @vite(['resources/js/pg.js','resources/css/pg.css'])
@@ -113,7 +111,7 @@
         @foreach($products as $product)
         <div class="product-card">
             <img src="{{URL::asset('public/image/'.$product->photo)}}" />
-            <!-- <div class="product-name">{{$product->name}} </div> -->
+            <div class="product-name">{{$product->name}} </div>
             <button class="btn" id="btn-order">Đặt lịch</button>
         </div>
         @endforeach
@@ -126,7 +124,7 @@
         <div class="cart_container">
             <div class="cart-left">
                 <div class="cart-skin ">
-                    <div class="cart-title">Trang phục</div>
+                    <div class="cart-title">Trang phục(50k/1bộ)</div>
                     <div class="cart-skin-info">
                         <img class="cart-img" src="" alt="">
                         <div>Nhập số lượng: <input id="skin-sl" type="text" value="0" required></div>
@@ -144,8 +142,7 @@
                 <div class="cart-time ">
                     <div class="cart-title">Thời gian</div>
                     <div class="cart-time-info">
-                        <textarea id="time-input" name="" cols="30" rows="5" placeholder="ví dụ: 9h30 ngày 10/10/2022"
-                            required></textarea>
+                        <textarea id="time-input" name="" cols="30" rows="5" placeholder="ví dụ: 9h30 ngày 10/10/2022" required></textarea>
                     </div>
                 </div>
                 <div class="line"></div>
@@ -156,16 +153,14 @@
                             <option value="ttp">Trong Thành Phố</option>
                             <option value="ntp">Ngoài Thành Phố</option>
                         </select>
-                        <textarea name="" id="address-input" cols="30" rows="5" placeholder=" Hãy nhập địa chỉ cụ thể"
-                            required></textarea>
+                        <textarea name="" id="address-input" cols="30" rows="5" placeholder=" Hãy nhập địa chỉ cụ thể" required></textarea>
                     </div>
                 </div>
                 <div class="line"></div>
                 <div class="cart-note ">
                     <div class="cart-title">Ghi chú</div>
                     <div class="cart-note-info">
-                        <textarea name="" id="note-input" cols="30" rows="5"
-                            placeholder="Hãy ghi ra những yêu cần bạn cần lưu ý chúng tôi!"></textarea>
+                        <textarea name="" id="note-input" cols="30" rows="5" placeholder="Hãy ghi ra những yêu cần bạn cần lưu ý chúng tôi!"></textarea>
                     </div>
                 </div>
                 <div class="line"></div>
@@ -188,15 +183,13 @@
                         <div class="cart-information-personnel">
                             <div class="personnel-male">
                                 <p>Số nhân sự nam</p>
-                                <div>x <input name="amountmalepg" type="text" class="personnel-amount-male" value="0"
-                                        required></div>
+                                <div>x <input name="amountmalepg" type="text" class="personnel-amount-male" value="0" required></div>
                             </div>
 
 
                             <div class="personnel-female">
                                 <p>Số nhân sự nữ</p>
-                                <div>x <input name="amountfemalepg" type="text" class="personnel-amount-female" value="0"
-                                        required></div>
+                                <div>x <input name="amountfemalepg" type="text" class="personnel-amount-female" value="0" required></div>
                             </div>
                         </div>
                         <div class="cart-information-time">
@@ -284,15 +277,15 @@
                 cart.querySelector(".skin-name").innerHTML = nameProduct;
                 cartImg.src = srcImg;
 
-                const idProduct = index + 1;
+                const idProduct = index + 3;
                 document.querySelector(
                     "#order-receipt"
                 ).action = `http://127.0.0.1:8000/mathpay/${idProduct}`;
             };
         });
 
-        jQuery(document).ready(function () {
-            jQuery('.btn-order-receipt').on('submit', function (e) { })
+        jQuery(document).ready(function() {
+            jQuery('.btn-order-receipt').on('submit', function(e) {})
         })
     </script>
 

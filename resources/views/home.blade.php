@@ -41,7 +41,7 @@
                 <li class="menu-item"><a href="{{ route('home') }}">Giới thiệu</a></li>
                 <li class="menu-item"><a href="{{ route('personnel') }}">Nhân sự</a></li>
                 <li class="menu-item"><a href="{{ route('feedback') }}">Feedback</a></li>
-                <li class="menu-item"><a href="{{ route('home') }}">Liên hệ</a></li>
+                <li class="menu-item"><a href="#contact">Liên hệ</a></li>
                 <li>
                     <a href="{{ route('login') }}" class="btn btn-login">Log in</a>
                     <a href="{{ route('register') }}" class="btn btn-logout">Register</a>

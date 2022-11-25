@@ -98,11 +98,11 @@ function Sum() {
     const personnelFemaleValue = personnelFemale.value;
     const skinValue = skinSL.value;
     const thanhtien =
-        personnelMaleValue * 100000 +
-        personnelFemaleValue * 100000 +
+        personnelMaleValue * 150000 +
+        personnelFemaleValue * 150000 +
         skinValue * 50000 +
-        (personnelMaleValue * 100000 +
-            personnelFemaleValue * 100000 +
+        (personnelMaleValue * 150000 +
+            personnelFemaleValue * 150000 +
             skinValue * 50000) *
             0.2;
     total.innerHTML = thanhtien;
