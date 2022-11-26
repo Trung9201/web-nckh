@@ -68,18 +68,11 @@ personnelFemale.addEventListener("change", () => {
     Sum();
 });
 
-// thời gian
+// thời gian địa chỉ
 const timeInput = document.querySelector("#time-input");
 
 timeInput.addEventListener("change", () => {
-    document.querySelector(".time-detail").innerHTML = timeInput.value;
-});
-
-// địa chỉ
-const addressInput = document.querySelector("#address-input");
-
-addressInput.addEventListener("change", () => {
-    document.querySelector(".address-detail").innerHTML = addressInput.value;
+    document.querySelector(".time-detail").value = timeInput.value;
 });
 
 // ghi chú
@@ -100,10 +93,10 @@ function Sum() {
     const thanhtien =
         personnelMaleValue * 150000 +
         personnelFemaleValue * 150000 +
-        skinValue * 50000 +
+        skinValue * 100000 +
         (personnelMaleValue * 150000 +
             personnelFemaleValue * 150000 +
-            skinValue * 50000) *
+            skinValue * 100000) *
             0.2;
     total.innerHTML = thanhtien;
 }

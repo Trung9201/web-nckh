@@ -21,8 +21,8 @@ class MathPG extends Controller
 
         $status = DB::table('PG')->select('amount')->where('id', '=', $id)->first();
         $st = json_decode(json_encode($status), true);
-        $tt = ($amountmale * 15000 + $amountfemale * 150000 + $pri['price'] * $amountskin) * 0.2;
-        $total = ($amountmale * 15000 + $amountfemale * 150000 + $pri['price'] * $amountskin) + $tt;
+        $tt = ($amountmale * 150000 + $amountfemale * 150000 + $pri['price'] * $amountskin) * 0.2;
+        $total = ($amountmale * 150000 + $amountfemale * 150000 + $pri['price'] * $amountskin) + $tt;
 
         $invoice = (['amountmale' => $amountmale, 'amountfemale' => $amountfemale, 'qtyskin' => $amountskin, 'total' => $total, 'priceskin' => $pri['price'], 'pg_id' => $id, 'user_id' => Auth::user()->id]);
         $product = PG::find($id);

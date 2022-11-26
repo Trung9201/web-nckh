@@ -106,7 +106,6 @@
     <!-- end automatic slide -->
 
     <!-- start product -->
-    <!-- start product -->
     <div class="products">
         @foreach($products as $product)
         <div class="product-card">
@@ -132,7 +131,7 @@
                 </div>
                 <div class="line"></div>
                 <div class="cart-personnel ">
-                    <div class="cart-title">Số lượng nhân sự</div>
+                    <div class="cart-title">Số lượng nhân sự(150k/ns)</div>
                     <div class="cart-personnel-info">
                         <span>Nam: <input id="personnel-sl-male" type="text" value="0" required></span>
                         <span>Nữ: <input id="personnel-sl-female" type="text" value="0" required></span>
@@ -140,20 +139,10 @@
                 </div>
                 <div class="line"></div>
                 <div class="cart-time ">
-                    <div class="cart-title">Thời gian</div>
+                <div class="cart-time ">
+                    <div class="cart-title">Thời gian & Địa chỉ:</div>
                     <div class="cart-time-info">
-                        <textarea id="time-input" name="" cols="30" rows="5" placeholder="ví dụ: 9h30 ngày 10/10/2022" required></textarea>
-                    </div>
-                </div>
-                <div class="line"></div>
-                <div class="cart-address ">
-                    <div class="cart-title">Địa chỉ</div>
-                    <div class="cart-address-info">
-                        <select name="selectAddress" id="select-address">
-                            <option value="ttp">Trong Thành Phố</option>
-                            <option value="ntp">Ngoài Thành Phố</option>
-                        </select>
-                        <textarea name="" id="address-input" cols="30" rows="5" placeholder=" Hãy nhập địa chỉ cụ thể" required></textarea>
+                        <textarea id="time-input" name="" cols="30" rows="5" placeholder="ví dụ: 9h30 ngày 10/10/2022; Địa chỉ hẹn Nam; Địa chỉ hẹn nữ;" required></textarea>
                     </div>
                 </div>
                 <div class="line"></div>
@@ -164,6 +153,7 @@
                     </div>
                 </div>
                 <div class="line"></div>
+            </div>
             </div>
 
             <div class="cart-right">
@@ -185,20 +175,14 @@
                                 <p>Số nhân sự nam</p>
                                 <div>x <input name="amountmalepg" type="text" class="personnel-amount-male" value="0" required></div>
                             </div>
-
-
                             <div class="personnel-female">
                                 <p>Số nhân sự nữ</p>
                                 <div>x <input name="amountfemalepg" type="text" class="personnel-amount-female" value="0" required></div>
                             </div>
                         </div>
                         <div class="cart-information-time">
-                            Thời gian:
-                            <div class="time-detail"></div>
-                        </div>
-                        <div class="cart-information-address">
-                            Địa chỉ:
-                            <div class="address-detail"></div>
+                            Thời gian & Địa chỉ:
+                            <input style="width: 300px; height: 50px; background: transparent; border: none;" type="text" name="timeaddress" class="time-detail" required="Nhập thời gian địa chỉ bên kia"></input>
                         </div>
                         <div class="cart-information-note">
                             Ghi chú:
@@ -277,7 +261,7 @@
                 cart.querySelector(".skin-name").innerHTML = nameProduct;
                 cartImg.src = srcImg;
 
-                const idProduct = index + 3;
+                const idProduct = index + 1;
                 document.querySelector(
                     "#order-receipt"
                 ).action = `http://127.0.0.1:8000/mathpay/${idProduct}`;
