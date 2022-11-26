@@ -22,6 +22,8 @@ return new class extends Migration {
             $table->unsignedBigInteger('total');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('pg_id');
+            $table->string('timeaddress');
+
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

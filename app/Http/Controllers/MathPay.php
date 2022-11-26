@@ -22,13 +22,15 @@ class MathPay extends Controller
 
         $amountmale = $request->amountmale;
         $amountfemale = $request->amountfemale;
+        $timeaddress = $request->timeaddress;
+
 
         $status = DB::table('product')->select('amount')->where('id', '=', $id)->first();
         $st = json_decode(json_encode($status), true);
         $tt =  ($amountmale * 150000 + $amountfemale * 150000 + $pri['price'] * $amountskin) * 0.2;
         $total = ($amountmale * 150000 + $amountfemale * 150000 + $pri['price'] * $amountskin) + $tt;
 
-        $invoice = (['amountmale' => $amountmale, 'amountfemale' => $amountfemale, 'qtyskin' => $amountskin, 'total' => $total, 'priceskin' => $pri['price'], 'product_id' => $id, 'user_id' => Auth::user()->id]);
+        $invoice = (['amountmale' => $amountmale, 'amountfemale' => $amountfemale, 'qtyskin' => $amountskin,'timeaddress'=>$timeaddress, 'total' => $total, 'priceskin' => $pri['price'], 'product_id' => $id, 'user_id' => Auth::user()->id]);
         $product = Product::find($id);
         $pass = $st['amount'] - $amountskin;
         $product->detail()->create($invoice);

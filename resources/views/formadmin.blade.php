@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <script src="https://code.jquery.com/jquery-3.1.1.js">
-
-
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -115,6 +113,7 @@
                         <th>Số lượng nhân sự nam</th>
                         <th>Số lượng nhân sự nữ</th>
                         <th> Đơn giá sản phẩm</th>
+                        <th>Thời gian</th>
                         <th> Tổng tiền</th>
                         <th>Action</th>
 
@@ -138,6 +137,7 @@
                         <th>Số lượng nhân sự nam</th>
                         <th>Số lượng nhân sự nữ</th>
                         <th> Đơn giá sản phẩm</th>
+                        <th>Thời gian</th>
                         <th> Tổng tiền</th>
                         <th>Action</th>
                     </tr>
@@ -226,6 +226,47 @@
         </div>
     </div>
     <!-- edit skin dl -->
+    <div class="modal fade" id="skineditmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Thay đổi Trang Phục</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form action="{{route('product.update',6)}}" id="editFormID-in" method="POST" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        {{ csrf_field() }}
+                        {{ method_field('PUT') }}
+
+                        <div class="form-group">
+                            <label>Tên Trang phục</label>
+                            <input type="text" class="form-control" name="name" placeholder="Nhập tên trang phục">
+                        </div>
+                        <div class="form-group">
+                            <label>Hình ảnh</label>
+                            <input type="file" class="form-control" required name="img">
+                        </div>
+                        <div class="form-group">
+                            <label>Số lượng</label>
+                            <input type="text" class="form-control" name="amount" placeholder="Nhập thông tin trang phục">
+                        </div>
+                        <div class="form-group">
+                            <label>Đơn giá</label>
+                            <input type="text" class="form-control" name="price" placeholder="Nhập thông tin trang phục">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Updated</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- edit skin pg -->
     <div class="modal fade" id="skineditmodal-in" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

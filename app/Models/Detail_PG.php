@@ -18,6 +18,7 @@ class Detail_PG extends Model
         'total',
         'user_id',
         'pg_id',
+        'timeaddress',
 
 
     ];

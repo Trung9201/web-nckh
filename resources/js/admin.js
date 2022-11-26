@@ -1,4 +1,5 @@
 //select menu
+jQuery.fn.dataTable.ext.errMode = "none";
 const sidebarItems = document.querySelectorAll(".sidebar-item");
 const contents = document.querySelectorAll(".content");
 
@@ -50,6 +51,7 @@ var tableReceipt = jQuery("#manager-receipt").DataTable({
         { data: "amountmale", name: "Số lượng nam" },
         { data: "amountfemale", name: "Số lượng nữ" },
         { data: "priceskin", name: "Đơn giá" },
+        { data: "timeaddress", name: "Thời gian" },
         { data: "total", name: "Tổng tiền" },
 
         { data: "action", name: "action" },
@@ -266,6 +268,7 @@ var tableReceipt = jQuery("#manager-receipt-pg").DataTable({
         { data: "amountmale", name: "Số lượng nam" },
         { data: "amountfemale", name: "Số lượng nữ" },
         { data: "priceskin", name: "Đơn giá" },
+        { data: "timeaddress", name: "Thời gian" },
         { data: "total", name: "Tổng tiền" },
 
         { data: "action", name: "action" },

@@ -231,7 +231,7 @@
                         </div>
                         <div class="cart-information-time">
                             Thời gian:
-                            <div class="time-detail"></div>
+                            <input type="text" name="timeaddress" class="time-detail"></input>
                         </div>
                         <div class="cart-information-address">
                             Địa chỉ:
@@ -314,7 +314,7 @@
                 cart.querySelector(".skin-name").innerHTML = nameProduct;
                 cartImg.src = srcImg;
 
-                const idProduct = index + 2;
+                const idProduct = index + 1;
                 document.querySelector(
                     "#order-receipt"
                 ).action = `http://127.0.0.1:8000/mathpay/${idProduct}`;
