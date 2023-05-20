@@ -113,8 +113,9 @@
         @foreach($products as $product)
         <div class="product-card">
             <img src="{{URL::asset('public/image/'.$product->photo)}}" />
-            <!-- <div class="product-name">{{$product->name}} </div> -->
-            <button class="btn" id="btn-order">Đặt lịch</button>
+            <input style="visibility: hidden;" class="idproduct" name="idproduct" value="{{$product->id}}"/>
+            <div class="product-name">{{$product->name}} </div>
+            <button class="btn" id="btn-orderpg">Đặt lịch</button>
         </div>
         @endforeach
     </div>
@@ -126,7 +127,7 @@
         <div class="cart_container">
             <div class="cart-left">
                 <div class="cart-skin ">
-                    <div class="cart-title">Trang phục</div>
+                    <div class="cart-title">Trang phục(50k/1 trang phục)</div>
                     <div class="cart-skin-info">
                         <img class="cart-img" src="" alt="">
                         <div>Nhập số lượng: <input id="skin-sl" type="text" value="0" required></div>
@@ -134,84 +135,48 @@
                 </div>
                 <div class="line"></div>
                 <div class="cart-personnel ">
-                    <div class="cart-title">Số lượng nhân sự</div>
+                    <div class="cart-title">Số lượng nhân sự(150k/1ns)</div>
                     <div class="cart-personnel-info">
                         <span>Nam: <input id="personnel-sl-male" type="text" value="0" required></span>
                         <span>Nữ: <input id="personnel-sl-female" type="text" value="0" required></span>
                     </div>
                 </div>
-                <div class="line"></div>
-                <div class="cart-time ">
-                    <div class="cart-title">Thời gian</div>
-                    <div class="cart-time-info">
-                        <textarea id="time-input" name="" cols="30" rows="5" placeholder="ví dụ: 9h30 ngày 10/10/2022"
-                            required></textarea>
-                    </div>
-                </div>
-                <div class="line"></div>
-                <div class="cart-address ">
-                    <div class="cart-title">Địa chỉ</div>
-                    <div class="cart-address-info">
-                        <select name="selectAddress" id="select-address">
-                            <option value="ttp">Trong Thành Phố</option>
-                            <option value="ntp">Ngoài Thành Phố</option>
-                        </select>
-                        <textarea name="" id="address-input" cols="30" rows="5" placeholder=" Hãy nhập địa chỉ cụ thể"
-                            required></textarea>
-                    </div>
-                </div>
-                <div class="line"></div>
-                <div class="cart-note ">
-                    <div class="cart-title">Ghi chú</div>
-                    <div class="cart-note-info">
-                        <textarea name="" id="note-input" cols="30" rows="5"
-                            placeholder="Hãy ghi ra những yêu cần bạn cần lưu ý chúng tôi!"></textarea>
-                    </div>
-                </div>
+
+
                 <div class="line"></div>
             </div>
 
             <div class="cart-right">
-                <form method="POST" id="order-receipt" action="{{url('/mathpg/2')}}">
+                <form method="POST" id="order-receiptpg" action="{{url('/mathpg/2')}}">
                     {{ csrf_field() }}
                     <div class="cart-right-title">HÓA ĐƠN</div>
                     <div class="cart-information">
                         <div class="cart-information-skin">
                             <div class="skin-name">Tên trang phục</div>
-                            <div>x <input name="amountskinpg" type="text" class="skin-amount" value="0" required></div>
+                            <div>x <input style="background: transparent; border: none;" name="amountskinpg" type="text"
+                                    class="skin-amount" value="0" required></div>
 
-                            @foreach ($errors->all() as $error)
-                            <div>{{ $error }}</div>
-                            @endforeach
-
+                          
                         </div>
                         <div class="cart-information-personnel">
                             <div class="personnel-male">
                                 <p>Số nhân sự nam</p>
-                                <div>x <input name="amountmalepg" type="text" class="personnel-amount-male" value="0"
-                                        required></div>
+                                <div>x <input style="background: transparent; border: none;" name=" amountmalepg"
+                                        type="text" class="personnel-amount-male" value="0" required></div>
                             </div>
 
 
                             <div class="personnel-female">
                                 <p>Số nhân sự nữ</p>
-                                <div>x <input name="amountfemalepg" type="text" class="personnel-amount-female" value="0"
-                                        required></div>
+                                <div>x <input style="background: transparent; border: none;" name=" amountfemalepg"
+                                        type="text" class="personnel-amount-female" value="0" required></div>
                             </div>
                         </div>
+
                         <div class="cart-information-time">
-                            Thời gian:
-                            <div class="time-detail"></div>
-                        </div>
-                        <div class="cart-information-address">
-                            Địa chỉ:
-                            <div class="address-detail"></div>
-                        </div>
-                        <div class="cart-information-note">
-                            Ghi chú:
-                            <div class="note-detail">
-                                Không có ghi chú
-                            </div>
+                            Thời gian & Địa chỉ:
+                            <input style="width: 100%; height: 50px; margin-left:-5px;" type="text" name="time"
+                                class="time-detail" required="Nhập thời gian địa chỉ bên kia"></input>
                         </div>
                         <div class="cart-information-fee">
                             <p>Phí dịch vụ:</p>
@@ -222,7 +187,7 @@
                             <p>Tổng thanh toán</p>
                             <div><span id="total"></span> vnđ</div>
                         </div>
-                        <button class="btn btn-order-receipt">Đặt dịch vụ</button>
+                        <button class="btn btn-order-receiptpg">Đặt dịch vụ</button>
                     </div>
                 </form>
             </div>
@@ -248,8 +213,8 @@
         </div>
 
         <div class="footer-item">
-            <a href="#service">Dịch vụ</a><br />
-            <a href="#service">Giới thiệu</a><br />
+            <a href="{{route('dashboard')}}">Dịch vụ</a><br />
+            <a href="{{route('dashboard')}}">Giới thiệu</a><br />
             <a href="{{ route('personnel') }}">Nhân sự</a><br />
             <a href="{{ route('feedback') }}">Feedback</a>
         </div>
@@ -272,7 +237,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script>
-        const btnOrders = document.querySelectorAll("#btn-order");
+        const btnOrders = document.querySelectorAll("#btn-orderpg");
         btnOrders.forEach((btn, index) => {
             btn.onclick = (e) => {
                 e.preventDefault();
@@ -284,16 +249,17 @@
                 cart.querySelector(".skin-name").innerHTML = nameProduct;
                 cartImg.src = srcImg;
 
-                const idProduct = index + 1;
+                const idProduct = document.getElementsByClassName("idproduct").[index].value;
                 document.querySelector(
-                    "#order-receipt"
-                ).action = `http://127.0.0.1:8000/mathpay/${idProduct}`;
+                    "#order-receiptpg"
+                ).action = `http://127.0.0.1:8000/mathpg/${idProduct}`;
             };
         });
 
         jQuery(document).ready(function () {
-            jQuery('.btn-order-receipt').on('submit', function (e) { })
+            jQuery('.btn-order-receiptpg').on('submit', function (e) { })
         })
+
     </script>
 
 </body>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PG;
+use Exception;
 use Illuminate\Http\Request;
 
 class PGController extends Controller
@@ -20,7 +21,7 @@ class PGController extends Controller
 
                 ->addColumn('action', function ($row) {
                     $html = '<button  class="btn btn-xs btn-secondary btn-edit-pg">Edit ';
-                    $html .= '<button data-rowid="' . $row->id . '" class="btn btn-xs btn-danger btn-deletein">Del</button>';
+                    $html .= '<button data-rowid="' . $row->id . '" class="btn btn-xs btn-danger btn-deletepg">Del</button>';
                     return $html;
                 })->toJson();
         }
@@ -43,18 +44,19 @@ class PGController extends Controller
      * @param  \Illuminate\Http\Request  $request
      */
     public function store(Request $request)
-    {
+    {   try {
         $data = new PG();
-
-
-
-
         if (!$request->file('image-pg')) {
             return "Mời chọn file cần upload";
         }
         $file = $request->file('image-pg');
         $filename = date('YmdHi') . $file->getClientOriginalName();
         $file->move(public_path('public/image'), $filename);
+        $validate = $request->validate([
+            'price' => 'required|Decimal',
+            'amount' => 'required|Decimal',
+            'photo'=> 'mimes:jpg,bmp,png',
+        ]);
         $data['photo'] = $filename;
         $data['name'] = $request->input('name-pg');
         $data['price'] = $request->input('price-pg');
@@ -62,6 +64,10 @@ class PGController extends Controller
 
         $data->save();
         return redirect()->back();
+        }
+        catch(Exception $e){
+            return $e;
+        }
     }
 
     /**
@@ -112,7 +118,6 @@ class PGController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-
      */
     public function destroy($id)
     {

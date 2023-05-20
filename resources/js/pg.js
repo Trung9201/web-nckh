@@ -164,53 +164,56 @@ personnelFemale.addEventListener("change", () => {
 });
 
 // thời gian
-const timeInput = document.querySelector("#time-input");
 
-timeInput.addEventListener("change", () => {
-    document.querySelector(".time-detail").innerHTML = timeInput.value;
-});
-
-// địa chỉ
-const addressInput = document.querySelector("#address-input");
-
-addressInput.addEventListener("change", () => {
-    document.querySelector(".address-detail").innerHTML = addressInput.value;
-});
-
-// ghi chú
-const noteInput = document.querySelector("#note-input");
-
-noteInput.addEventListener("change", () => {
-    document.querySelector(".note-detail").innerHTML = noteInput.value;
-});
 
 // Tính tổng hóa đơn
-const total = document.querySelector("#total");
+
 const selectAddress = document.querySelector("#select-dddress");
 
 function Sum() {
     const personnelMaleValue = personnelMale.value;
     const personnelFemaleValue = personnelFemale.value;
     const skinValue = skinSL.value;
+    const total = document.querySelector("#total");
+
     const thanhtien =
-        personnelMaleValue * 100000 +
-        personnelFemaleValue * 100000 +
+        personnelMaleValue * 150000 +
+        personnelFemaleValue * 150000 +
         skinValue * 50000 +
-        (personnelMaleValue * 100000 +
-            personnelFemaleValue * 100000 +
+        (personnelMaleValue * 150000 +
+            personnelFemaleValue * 150000 +
             skinValue * 50000) *
             0.2;
     total.innerHTML = thanhtien;
 }
+const btnOrders = document.querySelectorAll("#btn-orderpg");
+        btnOrders.forEach((btn, index) => {
+            btn.onclick = (e) => {
+                e.preventDefault();
+                cart.style.display = "block";
+                const card = e.target.closest(".product-card");
+                const srcImg = card.querySelector("img").src;
+                const cartImg = document.querySelector(".cart-img");
+                const nameProduct = card.querySelector(".product-name").innerHTML;
+                cart.querySelector(".skin-name").innerHTML = nameProduct;
+                cartImg.src = srcImg;
+
+                const idProduct = document.getElementsByClassName("idproduct")[index].value;
+                document.querySelector(
+                    "#order-receiptpg"
+                ).action = `http://127.0.0.1:8000/mathpg/${idProduct}`;
+            };
+        });
+
+        jQuery(document).ready(function () {
+            jQuery('.btn-order-receiptpg').on('submit', function (e) { })
+        })
 
 // show success
 
 const btnOrderReceipt = document.querySelector(".btn-order-receipt");
 const formSuccess = document.querySelector(".form_success");
 const btnCloseSuccess = document.querySelector(".fa-times");
-btnOrderReceipt.onclick = (e) => {
-    formSuccess.classList.add("active");
-};
 
 btnCloseSuccess.onclick = () => {
     formSuccess.classList.remove("active");

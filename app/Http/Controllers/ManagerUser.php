@@ -17,15 +17,14 @@ class ManagerUser extends Controller
      */
     public function index(Request $request)
     {
-
+        $id = 0;
         if ($request->ajax()) {
 
             $user = User::all()->where('id', '!=', 1);
+            
             return datatables()->of($user)->addColumn('action', function ($row) {
-                $html = '<a href=# class="btn btn-xs btn-secondary btn-edit" style="margin-bottom: 10px;">Edit</a> ';
-
-                $html .= '<button data-rowid="' . $row->id . '" class="btn btn-xs btn-danger btn-delete">Del</button>';
-
+               
+                $html = '<button data-rowid="' . $row->id . '" class="btn btn-xs btn-danger btn-delete">Del</button>';
 
                 return $html;
             })->toJson();

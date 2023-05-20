@@ -33,7 +33,7 @@ use App\Http\Controllers\InvoiceController;
 
 Route::get('/dashboard', function () {
     return view('homepage');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified','guard'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
 Route::group(['middleware' => 'role:admin'], function () {
@@ -54,7 +54,7 @@ Route::resource('user', ManagerUser::class);
 
 Route::get('/', function () {
     return view('home');
-})->name('home');
+})->name('home')->middleware('loginGuard');
 
 
 Route::get('/danle', [
@@ -81,7 +81,7 @@ Route::get('/personnel', [
     function () {
         return view('pagepersonnel');
     }
-])->name('personnel');
+])->name('personnel')->middleware('guard');
 Route::get('/thu', function () {
     return view('formchinh');
 });

@@ -56,6 +56,11 @@ class Productt extends Controller
         $file = $request->file('image');
         $filename = date('YmdHi') . $file->getClientOriginalName();
         $file->move(public_path('public/image'), $filename);
+        $validate = $request->validate([
+            'price' => 'required|Decimal',
+            'amount' => 'required|Decimal',
+            'photo'=> 'mimes:jpg,bmp,png',
+        ]);
         $data['photo'] = $filename;
         $data['name'] = $request->input('name');
         $data['price'] = $request->input('price');

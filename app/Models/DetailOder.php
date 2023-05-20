@@ -16,6 +16,7 @@ class DetailOder extends Model
         'amountfemale',
         'total',
         'user_id',
+        'timeadress',
         'product_id',
 
 

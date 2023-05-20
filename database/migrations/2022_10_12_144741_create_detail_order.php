@@ -23,6 +23,7 @@ return new class extends Migration
             $table->unsignedBigInteger('total');
              $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
+            $table->string('timeadress');
             $table->timestamps();
            
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

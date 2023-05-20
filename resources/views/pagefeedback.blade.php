@@ -26,8 +26,8 @@
                         <li>
                             <a>PG +</a>
                             <ul class="menu-child-2">
-                                <li><a href="{{ route('pg') }}">Tiệc cưới</a></li>
-                                <li><a href="{{ route('pg') }}">Sự kiện</a></li>
+                                <li><a href="{{ route('pg.index') }}">Tiệc cưới</a></li>
+                                <li><a href="{{ route('pg.index') }}">Sự kiện</a></li>
                             </ul>
                         </li>
                         <li><a href="{{ route('pagedanle.index') }}">Dẫn lễ</a></li>

@@ -1,0 +1,72 @@
+{
+  "resources/js/admin.js": {
+    "file": "assets/admin.ef20ffb6.js",
+    "src": "resources/js/admin.js",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app.e8b13026.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/home.js": {
+    "file": "assets/home.379ba18b.js",
+    "src": "resources/js/home.js",
+    "isEntry": true
+  },
+  "resources/js/pg.js": {
+    "file": "assets/pg.f8df96a2.js",
+    "src": "resources/js/pg.js",
+    "isEntry": true
+  },
+  "resources/js/danle.js": {
+    "file": "assets/danle.df9456d5.js",
+    "src": "resources/js/danle.js",
+    "isEntry": true
+  },
+  "resources/js/feedback.js": {
+    "file": "assets/feedback.9d458089.js",
+    "src": "resources/js/feedback.js",
+    "isEntry": true
+  },
+  "resources/js/personnel.js": {
+    "file": "assets/personnel.e0816f59.js",
+    "src": "resources/js/personnel.js",
+    "isEntry": true
+  },
+  "resources/css/admin.css": {
+    "file": "assets/admin.847dfdc4.css",
+    "src": "resources/css/admin.css",
+    "isEntry": true
+  },
+  "resources/css/feedback.css": {
+    "file": "assets/feedback.d24d3d3d.css",
+    "src": "resources/css/feedback.css",
+    "isEntry": true
+  },
+  "resources/css/home.css": {
+    "file": "assets/home.9d227948.css",
+    "src": "resources/css/home.css",
+    "isEntry": true
+  },
+  "resources/css/danle.css": {
+    "file": "assets/danle.92feb182.css",
+    "src": "resources/css/danle.css",
+    "isEntry": true
+  },
+  "resources/css/pg.css": {
+    "file": "assets/pg.4a05edeb.css",
+    "src": "resources/css/pg.css",
+    "isEntry": true
+  },
+  "resources/css/personnel.css": {
+    "file": "assets/personnel.ef9bd185.css",
+    "src": "resources/css/personnel.css",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.d5897e90.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  }
+}

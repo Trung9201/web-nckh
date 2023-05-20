@@ -52,6 +52,7 @@ var tableReceipt = jQuery("#manager-receipt").DataTable({
         { data: "amountmale", name: "Số lượng nam" },
         { data: "amountfemale", name: "Số lượng nữ" },
         { data: "priceskin", name: "Đơn giá" },
+        { data: "timeadress", name: "Thoi gian dia" },
         {data:'total',name:"Tổng tiền"},
         
         { data: "action", name: "action" },
@@ -59,28 +60,8 @@ var tableReceipt = jQuery("#manager-receipt").DataTable({
 });
 
 // table skins
-var table = jQuery("#manager-skin").DataTable({
-    ajax: "/product",
-    serverSide: true,
-    autoWidth: false,
-    processing: true,
-    aaSorting: [[0, "asc"]],
-    columns: [
-        { data: "id" },
-        { data: "name" },
-        {
-            data: "photo",
-            render: function (data) {
-                var img = `<img src="{{URL::asset('public/image/${data}')}}"/>`;
-                return img;
-            },
-        },
-        { data: "amount", name: "amount" },
-        { data: "price", name: "price" },
 
-        { data: "action", name: "action" },
-    ],
-});
+   
 
 //table personnel
 var tablePersonnel = jQuery("#manager-personnel").DataTable({
@@ -123,6 +104,7 @@ jQuery(document).on("click", ".btn-delete", function () {
         success: function (data) {
             if (data.success) {
                 table.row(el.parents("tr")).remove().draw();
+                location.reload(true);
             }
         },
     }); //end ajax
@@ -142,11 +124,12 @@ jQuery(document).on("click", ".btn-deletepr", function () {
         success: function (data) {
             if (data.success) {
                 table.row(el.parents("tr")).remove().draw();
+                location.reload(true);
             }
         },
     });
 });
-jQuery(document).on("click", ".btn-deletein", function () {
+jQuery(document).on("click", ".btn-deletepg", function () {
     if (!confirm("Bạn chắc chắn muốn xóa?")) return;
 
     var rowid = jQuery(this).data("rowid");
@@ -161,62 +144,14 @@ jQuery(document).on("click", ".btn-deletein", function () {
         success: function (data) {
             if (data.success) {
                 table.row(el.parents("tr")).remove().draw();
+                location.reload(true);
             }
         },
     });
 });
 
 //handleBtnEdit
-jQuery(document).ready(function () {
-    jQuery(".btn-edit").on("click", function (e) {
-        e.preventDefault();
-        jQuery("#skineditmodal").modal("show");
 
-        var tr = jQuery(this).closest("tr");
-
-        var data = tr
-            .children("td")
-            .map(function () {
-                return jQuery(this).text();
-            })
-            .get();
-
-        jQuery("input[name='name']").val(data[1]);
-        jQuery("input[name='photo']").val(data[2]);
-        jQuery("input[name='amount']").val(data[3]);
-        jQuery("input[name='price']").val(data[4]);
-
-        document.querySelector(
-            "#editFormID"
-        ).action = `http://127.0.0.1:8000/product/${data[0]}`;
-    });
-    jQuery("#editFormID").on("submit", function (e) {});
-});
-jQuery(document).ready(function () {
-    jQuery(".btn-edit-pg").on("click", function (e) {
-        e.preventDefault();
-        jQuery("#skineditmodal-in").modal("show");
-
-        var tr = jQuery(this).closest("tr");
-
-        var data = tr
-            .children("td")
-            .map(function () {
-                return jQuery(this).text();
-            })
-            .get();
-
-        jQuery("input[name='name-pg-in']").val(data[1]);
-        jQuery("input[name='photo-pg-in']").val(data[2]);
-        jQuery("input[name='amount-pg-in']").val(data[3]);
-        jQuery("input[name='price-pg-in']").val(data[4]);
-
-        document.querySelector(
-            "#editFormID-in"
-        ).action = `http://127.0.0.1:8000/PG/${data[0]}`;
-    });
-    jQuery("#editFormID-in").on("submit", function (e) {});
-});
 jQuery(document).on("click", ".btn-deletein", function () {
     if (!confirm("Bạn chắc chắn muốn xóa?")) return;
 
@@ -232,29 +167,12 @@ jQuery(document).on("click", ".btn-deletein", function () {
         success: function (data) {
             if (data.success) {
                 table.row(el.parents("tr")).remove().draw();
+                location.reload(true);
             }
         },
     });
 });
-jQuery(document).on("click", ".btn-deleteinpg", function () {
-    if (!confirm("Bạn chắc chắn muốn xóa?")) return;
 
-    var rowid = jQuery(this).data("rowid");
-    var el = jQuery(this);
-    if (!rowid) return;
-
-    jQuery.ajax({
-        type: "POST",
-        dataType: "JSON",
-        url: "PGinvoince/" + rowid,
-        data: { _method: "delete" },
-        success: function (data) {
-            if (data.success) {
-                table.row(el.parents("tr")).remove().draw();
-            }
-        },
-    });
-});
 var tableReceipt = jQuery("#manager-receipt-pg").DataTable({
     ajax: "/PGinvoice",
     serverSide: true,
@@ -268,30 +186,9 @@ var tableReceipt = jQuery("#manager-receipt-pg").DataTable({
         { data: "amountmale", name: "Số lượng nam" },
         { data: "amountfemale", name: "Số lượng nữ" },
         { data: "priceskin", name: "Đơn giá" },
+        {data:"timeadress",},
         {data:'total',name:"Tổng tiền"},
         
-        { data: "action", name: "action" },
-    ],
-});
-var table = jQuery("#manager-skin-pg").DataTable({
-    ajax: "/PG",
-    serverSide: true,
-    autoWidth: false,
-    processing: true,
-    aaSorting: [[0, "asc"]],
-    columns: [
-        { data: "id" },
-        { data: "name" },
-        {
-            data: "photo",
-            render: function (data) {
-                var img = `<img src="{{URL::asset('public/image/${data}')}}"/>`;
-                return img;
-            },
-        },
-        { data: "amount", name: "amount" },
-        { data: "price", name: "price" },
-
         { data: "action", name: "action" },
     ],
 });

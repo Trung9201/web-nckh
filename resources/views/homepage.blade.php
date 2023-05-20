@@ -40,7 +40,7 @@
                         <li><a href="{{ route('pagedanle.index') }}">Dẫn lễ</a></li>
                     </ul>
                 </li>
-                <li class="menu-item"><a href="{{ route('home') }}">Giới thiệu</a></li>
+                <li class="menu-item"><a href="{{ route('dashboard') }}">Giới thiệu</a></li>
                 <li class="menu-item"><a href="{{ route('personnel') }}">Nhân sự</a></li>
                 <li class="menu-item"><a href="{{ route('feedback') }}">Feedback</a></li>
                 <li class="menu-item"><a href="{{ route('home') }}">Liên hệ</a></li>

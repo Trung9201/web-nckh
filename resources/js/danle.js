@@ -69,43 +69,31 @@ personnelFemale.addEventListener("change", () => {
 });
 
 // thời gian
-const timeInput = document.querySelector("#time-input");
-
-timeInput.addEventListener("change", () => {
-    document.querySelector(".time-detail").innerHTML = timeInput.value;
-});
 
 // địa chỉ
-const addressInput = document.querySelector("#address-input");
 
-addressInput.addEventListener("change", () => {
-    document.querySelector(".address-detail").innerHTML = addressInput.value;
-});
-
-// ghi chú
-const noteInput = document.querySelector("#note-input");
-
-noteInput.addEventListener("change", () => {
-    document.querySelector(".note-detail").innerHTML = noteInput.value;
-});
 
 // Tính tổng hóa đơn
-const total = document.querySelector("#total");
+
 const selectAddress = document.querySelector("#select-dddress");
 
 function Sum() {
-    const personnelMaleValue = personnelMale.value;
-    const personnelFemaleValue = personnelFemale.value;
-    const skinValue = skinSL.value;
+    const personnelMaleValue = parseInt( personnelMale.value);
+    const personnelFemaleValue = parseInt( personnelFemale.value);
+    const skinValue =parseInt (skinSL.value);
+    const total = document.querySelector("#total");
     const thanhtien =
-        personnelMaleValue * 100000 +
-        personnelFemaleValue * 100000 +
-        skinValue * 50000 +
-        (personnelMaleValue * 100000 +
-            personnelFemaleValue * 100000 +
-            skinValue * 50000) *
+        personnelMaleValue * 150000+
+        personnelFemaleValue * 150000+
+        skinValue * 100000+
+        (personnelMaleValue * 150000+
+            personnelFemaleValue * 150000+
+            skinValue * 100000) *
             0.2;
+
+             console.debug(total);
     total.innerHTML = thanhtien;
+    
 }
 
 // show success

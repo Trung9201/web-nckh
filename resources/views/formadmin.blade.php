@@ -28,12 +28,10 @@
         </div>
         <ul class="sidebar-menu">
             <li class="sidebar-item active">Quản lý tài khoản</li>
-            <li class="sidebar-item">Quản lý đơn hàng</li>
-            <li class="sidebar-item">Quản lý đơn hàng pg</li>
-            <li class="sidebar-item">Quản lý trang phục pg</li>
-            <li class="sidebar-item">Quản lý trang phục</li>
-            <li class="sidebar-item">Quản lý nhân sự</li>
-            <li class="sidebar-item">Quản lý feedback</li>
+            <li class="sidebar-item">Quản lý trang phục DL</li>
+            <li class="sidebar-item">Quản lý trang phục PG</li>
+            <li class="sidebar-item">Quản lý đơn hàng DL</li>
+            <li class="sidebar-item">Quản lý đơn hàng PG</li>
         </ul>
     </div>
 
@@ -56,78 +54,8 @@
             </table>
         </div>
 
-        <!-- form quản lý đơn  -->
-        <div class="list-receipt content">
-            <div class="managament-title">
-                Danh sách Hóa đơn
-            </div>
-            <table id="manager-receipt">
-                <thead>
-                    <tr>
-                        <th>STT</th>
-                        <th>Loại trang phục</th>
-                        <th>Tên người dùng</th>
-                        <th>Số lượng trang phục</th>
-                        <th>Số lượng nhân sự nam</th>
-                        <th>Số lượng nhân sự nữ</th>
-                        <th> Đơn giá sản phẩm</th>
-                        <th> Tổng tiền</th>
-                        <th>Action</th>
-
-
-                    </tr>
-                </thead>
-            </table>
-        </div>
-
-        <div class="list-receipt-pg content">
-            <div class="managament-title">
-                Danh sách Hóa đơn
-            </div>
-            <table id="manager-receipt-pg">
-                <thead>
-                    <tr>
-                        <th>STT</th>
-                        <th>Loại trang phục</th>
-                        <th>Tên người dùng</th>
-                        <th>Số lượng trang phục</th>
-                        <th>Số lượng nhân sự nam</th>
-                        <th>Số lượng nhân sự nữ</th>
-                        <th> Đơn giá sản phẩm</th>
-                        <th> Tổng tiền</th>
-                        <th>Action</th>
-
-
-                    </tr>
-                </thead>
-            </table>
-        </div>
-
-        <div class="list-skin content">
-            <div class="managament-title">
-                Danh sách Trang phục
-            </div>
-            <!-- add skin -->
-
-            <div class="add">
-                <button type="button" class="add btn btn-primary" data-toggle="modal" data-target="#skinaddmodal-pg">Thêm
-                    Trang Phục</button>
-            </div>
-            <table id="manager-skin-pg">
-                <thead>
-                    <tr>
-                        <th>STT</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Ảnh </th>
-                        <th> Số lượng</th>
-                        <th> Đơn giá</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <!-- form quản lý trang phục -->
-        <div class="list-skin content">
+         <!-- form quản lý trang phục -->
+         <div class="list-skin content">
             <div class="managament-title">
                 Danh sách Trang phục
             </div>
@@ -150,49 +78,87 @@
                 </thead>
             </table>
         </div>
-        <!-- form quản lý nhân sự -->
-        <div class="list-personnel content">
+
+
+        <div class="list-skin content">
             <div class="managament-title">
-                Danh sách Nhân sự
+                Danh sách Trang phục
             </div>
-            <!--  thêm nhân sự -->
-            <div class="form-group">
-                <input type="file" name="photo" id="photo" accept="image/*" class="form-control-file-img" />
-                <button class="btn">Thêm</button>
+            <!-- add skin -->
+
+            <div class="add">
+                <button type="button" class="add btn btn-primary" data-toggle="modal"
+                    data-target="#skinaddmodal-pg">Thêm
+                    Trang Phục</button>
             </div>
-            <table id="manager-personnel">
+            <table id="manager-skin-pg">
                 <thead>
                     <tr>
                         <th>STT</th>
-                        <th>Hình ảnh</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Ảnh </th>
+                        <th> Số lượng</th>
+                        <th> Đơn giá</th>
                         <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+       
+        <!-- form quản lý đơn DL -->
+        <div class="list-receipt content">
+            <div class="managament-title">
+                Danh sách Hóa đơn
+            </div>
+            <table id="manager-receipt">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Loại trang phục</th>
+                        <th>Tên người dùng</th>
+                        <th>Số lượng trang phục</th>
+                        <th>Số lượng nhân sự nam</th>
+                        <th>Số lượng nhân sự nữ</th>
+                        <th> Đơn giá sản phẩm</th>
+                        <th>Thời gian && Địa chỉ</th>
+                        <th> Tổng tiền</th>
+                        <th>Action</th>
+
+
                     </tr>
                 </thead>
             </table>
         </div>
 
-        <!-- form quản lý feedback -->
-        <div class="list-feedback content">
+        <!-- ql hoas don pg -->
+
+        <div class="list-receipt-pg content">
             <div class="managament-title">
-                Danh sách Feedback
+                Danh sách Hóa đơn
             </div>
-            <!-- add feedback -->
-            <div class="form-group">
-                <input type="file" name="photo" id="photo" accept="image/*" class="form-control-file-img" />
-                <button class="btn">Thêm</button>
-            </div>
-            <table id="manager-feedback">
+            <table id="manager-receipt-pg">
                 <thead>
                     <tr>
                         <th>STT</th>
-                        <th>Hình ảnh</th>
+                        <th>Loại trang phục</th>
+                        <th>Tên người dùng</th>
+                        <th>Số lượng trang phục</th>
+                        <th>Số lượng nhân sự nam</th>
+                        <th>Số lượng nhân sự nữ</th>
+                        <th> Đơn giá sản phẩm</th>
+                        <th>Thời gian && Địa chỉ</th>
+                        <th> Tổng tiền</th>
                         <th>Action</th>
+
+
                     </tr>
                 </thead>
             </table>
         </div>
+
 
     </div>
+
     <!-- add skin -->
     <div class="modal fade" id="skinaddmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -269,6 +235,50 @@
                         <div class="form-group">
                             <label>Đơn giá</label>
                             <input type="text" class="form-control" name="price-pg-in"
+                                placeholder="Nhập thông tin trang phục">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Updated</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="skineditmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Thay đổi Trang Phục</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form action="{{route('product.update',6)}}" id="editFormID" method="POST"
+                    enctype="multipart/form-data">
+                    <div class="modal-body">
+                        {{ csrf_field() }}
+                        {{ method_field('PUT') }}
+
+                        <div class="form-group">
+                            <label>Tên Trang phục</label>
+                            <input type="text" class="form-control" name="name" placeholder="Nhập tên trang phục">
+                        </div>
+                        <div class="form-group">
+                            <label>Hình ảnh</label>
+                            <input type="file" class="form-control" required name="img">
+                        </div>
+                        <div class="form-group">
+                            <label>Số lượng</label>
+                            <input type="text" class="form-control" name="amount"
+                                placeholder="Nhập thông tin trang phục">
+                        </div>
+                        <div class="form-group">
+                            <label>Đơn giá</label>
+                            <input type="text" class="form-control" name="price"
                                 placeholder="Nhập thông tin trang phục">
                         </div>
                     </div>
@@ -407,6 +417,75 @@
             },
             ],
         });
+        jQuery(document).ready(function () {
+            jQuery(".btn-edit").on("click", function (e) {
+                e.preventDefault();
+                jQuery("#skineditmodal").modal("show");
+
+                var tr = jQuery(this).closest("tr");
+
+                var data = tr
+                    .children("td")
+                    .map(function () {
+                        return jQuery(this).text();
+                    })
+                    .get();
+
+                jQuery("input[name='name']").val(data[1]);
+                jQuery("input[name='photo']").val(data[2]);
+                jQuery("input[name='amount']").val(data[3]);
+                jQuery("input[name='price']").val(data[4]);
+
+                document.querySelector(
+                    "#editFormID"
+                ).action = `http://127.0.0.1:8000/product/${data[0]}`;
+            });
+            jQuery("#editFormID").on("submit", function (e) { });
+        });
+        jQuery(document).ready(function () {
+            jQuery(".btn-edit-pg").on("click", function (e) {
+                e.preventDefault();
+                jQuery("#skineditmodal-in").modal("show");
+
+                var tr = jQuery(this).closest("tr");
+
+                var data = tr
+                    .children("td")
+                    .map(function () {
+                        return jQuery(this).text();
+                    })
+                    .get();
+
+                jQuery("input[name='name-pg-in']").val(data[1]);
+                jQuery("input[name='photo-pg-in']").val(data[2]);
+                jQuery("input[name='amount-pg-in']").val(data[3]);
+                jQuery("input[name='price-pg-in']").val(data[4]);
+
+                document.querySelector(
+                    "#editFormID-in"
+                ).action = `http://127.0.0.1:8000/PG/${data[0]}`;
+            });
+            jQuery("#editFormID-in").on("submit", function (e) { });
+        });
+        jQuery(document).on("click", ".btn-deleteinpg", function () {
+    if (!confirm("Bạn chắc chắn muốn xóa?")) return;
+
+    var rowid = jQuery(this).data("rowid");
+    var el = jQuery(this);
+    if (!rowid) return;
+
+    jQuery.ajax({
+        type: "POST",
+        dataType: "JSON",
+        url: "/PGinvoice/" + rowid,
+        data: { _method: "delete" },
+        success: function (data) {
+            if (data.success) {
+                table.row(el.parents("tr")).remove().draw();
+            }
+        },
+    });
+});
     </script>
 </body>
 

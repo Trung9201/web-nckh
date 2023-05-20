@@ -18,9 +18,10 @@ class Guard
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth::check()) {
-            return response()->view('auth.login');
+        if ($request->session()->has('users')) {
+            return response()->view('home');
         }
+        
         return $next($request);
     }
 }
