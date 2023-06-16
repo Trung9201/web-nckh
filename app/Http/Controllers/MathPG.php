@@ -28,7 +28,7 @@ class MathPG extends Controller
     $invoice = (['amountmale' => $amountmale, 'timeadress' => $time, 'amountfemale' => $amountfemale, 'qtyskin' => $amountskin, 'total' => $total, 'priceskin' => $pri['price'], 'pg_id' => $id, 'user_id' => Auth::user()->id]);
     $product = PG::find($id);
     $pass = $st['amount'] - $amountskin;
-    $product->detailpg()->create($invoice);
+    $product->detail()->create($invoice);
 
     $product->fill(array('amount' => $pass));
     $product->push();

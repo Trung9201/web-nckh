@@ -16,7 +16,7 @@ class PGinvoice extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $product = DB::table('detail_pg')->join('users', 'users.id', '=', 'detail_pg.user_id')->join('pg', 'pg.id', '=', 'detail_pg.pg_id')->select('detail_pg.*', 'users.name as names', 'pg.name')->get();
+            $product = DB::table('detail')->join('users', 'users.id', '=', 'detail.user_id')->join('pg', 'pg.id', '=', 'detail.pg_id')->select('detail.*', 'users.name as names', 'pg.name')->get();
 
             return datatables()->of($product)
 

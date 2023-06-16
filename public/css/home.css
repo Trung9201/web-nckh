@@ -109,7 +109,7 @@ button,li, a {
     top: 43px;
     opacity: 1;
     visibility: unset;
-    transition: all .3s ease-in;
+    transition: all .5s ease-in;
 }
 
 
@@ -134,7 +134,7 @@ button,li, a {
     top: 0;
     left: 131px;
     opacity: 1 !important;
-    transition: all .3s ease;
+    transition: all .5s ease;
 }
 
 .btn-login {

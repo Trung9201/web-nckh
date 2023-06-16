@@ -18,9 +18,9 @@ class PG extends Model
 
 
     ];
-    public function detailpg()
+    public function detail()
     {
-        return $this->belongsTo(Detail_PG::class, 'pg_id');
+        return $this->belongsTo(Detail::class, 'pg_id');
     }
 
 }

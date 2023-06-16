@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dịch vụ Bạch Dương</title>
+    <title>Dịch vụ Thuý Cải</title>
 
     @vite(['resources/js/home.js','resources/css/home.css'])
     @vite(['resources/js/personnel.js','resources/css/personnel.css'])
@@ -127,7 +127,7 @@
             <a href="{{ route('feedback') }}">Feedback</a>
         </div>
         <div class="footer-item">
-            <p>Email: bachduong92@gmail.com</p>
+            <p>Email: thuycai92@gmail.com</p>
             <p>Phone: 0332631117</p>
             <div class="icon">
                 <a href="https://www.facebook.com/bongvintage1"><i class="fa-brands fa-facebook"></i></a>

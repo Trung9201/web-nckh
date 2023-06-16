@@ -24,7 +24,7 @@
             <a href="{{ route('home') }}" class="navbar_logo">
                 <img src="{{URL::asset('/images/logo-bd.png')}}" alt="">
             </a>
-            <p>Dịch vụ Bạch Dương</p>
+            <p>Dịch vụ Thuý Cải</p>
         </div>
         <ul class="sidebar-menu">
             <li class="sidebar-item active">Quản lý tài khoản</li>
@@ -394,6 +394,7 @@
             },
             {
                 data: "name",
+                name:"name"
             },
             {
                 data: "photo",

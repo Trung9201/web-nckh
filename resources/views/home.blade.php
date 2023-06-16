@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dịch vụ Bạch Dương</title>
+    <title>Dịch vụ Thuý Cải</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
@@ -67,7 +67,7 @@
         <div class="banner_container">
             <img src="{{URL::asset('/images/bannerhome.jpg')}}" alt="" />
             <div class="banner-content">
-                <div class="banner-title" style="font-size: 86px">Dịch vụ sự kiện Bạch Dương</div>
+                <div class="banner-title" style="font-size: 86px">Dịch vụ sự kiện Thuý Cải</div>
             </div>
         </div>
     </div>
@@ -96,14 +96,14 @@
 
         <div class="vanvo">
             <p>
-                Dịch vụ bê tráp, PG sự kiện Bạch Dương luôn đi đầu Thái Bình
+                Dịch vụ bê tráp, PG sự kiện Thuý Cải luôn đi đầu Thái Bình
                 về chất lượng dịch vụ, với đội ngũ nhân sự trẻ tuổi, nhiệt
                 huyết luôn tạo sự mới mẻ nhưng không kém phần chuyên nghiệp
                 <br />
                 Đem đến sự hài lòng tuyệt đối cho khách hàng khi sử dụng
                 dịch vụ
             </p>
-            <h2>--- Bạch Dương ---</h2>
+            <h2>--- Thuý Cải ---</h2>
 
         </div>
 
@@ -152,7 +152,7 @@
                 luôn sắp xếp ổn <br> thoả nhất để ngày vui của khách hàng không
                 chỉ trọn vẹn mà có giá phải chăng <br> nhất, chuyên nghiệp nhất.
             </p>
-            <h2>--- Bạch Dương ---</h2>
+            <h2>--- Thuý Cải ---</h2>
         </div>
     </div>
     <!-- end service -->
@@ -164,7 +164,7 @@
             <img src="{{URL::asset('/images/flme3.jpg')}}" alt="" />
             <img src="{{URL::asset('/images/flme2.jpg')}}" alt="" />
         </div>
-        <a href="https://www.facebook.com/bongvintage1" class="btn">@Bach_Duong</a>
+        <a href="https://www.facebook.com/bongvintage1" class="btn">@Thuý Cải/a>
     </div>
 
     <!-- start contact -->

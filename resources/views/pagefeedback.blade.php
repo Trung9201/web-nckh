@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dịch vụ Bạch Dương</title>
+    <title>Dịch vụ Thuý Cải</title>
     @vite(['resources/js/home.js','resources/css/home.css'])
     @vite(['resources/js/feedback.js','resources/css/feedback.css'])
 

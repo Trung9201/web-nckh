@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dịch vụ Bạch Dương</title>
+    <title>Dịch vụ Thuý Cải</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
@@ -258,7 +258,7 @@
             <a href="{{ route('feedback') }}">Feedback</a>
         </div>
         <div class="footer-item">
-            <p>Email: bachduong92@gmail.com</p>
+            <p>Email: thuycai2@gmail.com</p>
             <p>Phone: 0332631117</p>
             <div class="icon">
                 <a href="https://www.facebook.com/bongvintage1"><i class="fa-brands fa-facebook"></i></a>

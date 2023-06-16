@@ -53,8 +53,8 @@ class PGController extends Controller
         $filename = date('YmdHi') . $file->getClientOriginalName();
         $file->move(public_path('public/image'), $filename);
         $validate = $request->validate([
-            'price' => 'required|Decimal',
-            'amount' => 'required|Decimal',
+            'price' => 'Decimal',
+            'amount' => 'Integer',
             'photo'=> 'mimes:jpg,bmp,png',
         ]);
         $data['photo'] = $filename;
